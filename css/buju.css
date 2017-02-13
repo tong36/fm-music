@@ -132,26 +132,41 @@
   padding-right: 50px;
 }
 #fm_music #volume #vol .lable {
+  width: 24px;
+  height: 24px;
   color: #fff;
+  cursor: pointer;
 }
 #fm_music #volume #vol .range {
   position: relative;
+  margin-left: 10px;
+  height: 20px;
 }
 #fm_music #volume #vol .range .vol_t {
-  position: absolute;
+  position: relative;
   top: 11px;
-  left: 10px;
-  width: 120px;
+  width: 106px;
   height: 2px;
-  background-color: #515557;
+  background-color: #fff;
+  cursor: pointer;
 }
 #fm_music #volume #vol .range .vol_f {
-  position: absolute;
-  top: 11px;
-  left: 10px;
+  position: relative;
+  top: 9px;
   width: 100px;
   height: 2px;
-  background-color: #cacbcc;
+  background-color: #000;
+  cursor: pointer;
+}
+#fm_music #volume #vol .range .vol_point {
+  position: relative;
+  left: 100px;
+  top: 5px;
+  width: 6px;
+  height: 6px;
+  border-radius: 3px;
+  background: red;
+  cursor: pointer;
 }
 #fm_music #volume #lyric_btn {
   height: 30px;
@@ -247,5 +262,3 @@
 .change_list::-webkit-scrollbar-button {
   height: 0px;
 }
-
-/*# sourceMappingURL=buju.css.map */

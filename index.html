@@ -41,10 +41,11 @@
 			<!--音量|歌词按钮-->
 			<section id="volume" class="clearfix">
 				<div id="vol">
-					<div class="fl lable fa fa-volume-off fa-2x"></div>
+					<div class="fl lable fa fa-volume-up fa-2x"></div>
 					<div class="range fl">
 						<div class="vol_t"></div>
 						<div class="vol_f"></div>
+						<div class="vol_point"></div>
 					</div>
 				</div>
 				<div id="lyric_btn" class="fa fa-toggle-off fa-2x fr"></div>
@@ -66,11 +67,14 @@
 			</section>
 		</div>
 		<script src="js/jquery.min.js"></script>
+		<script src="js/draggabilly.pkgd.min.js"></script>
 		<script src="js/getmusic.js"></script>
+		<script src="js/volume.js"></script>
 		<script src="js/panel_control.js"></script>
 		<script>
 			new Getmusic($('#fm_music'));
 			new Panel_control($('#fm_music'));
+			new Volume($('#fm_music'));
 		</script>
 	</body>
 </html>
