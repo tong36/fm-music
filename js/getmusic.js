@@ -20,6 +20,7 @@ Getmusic.prototype.init = function() {
 	this.$lyric_btn = this.$fm.find('#lyric_btn');
 	this.$rotor = this.$fm.find('.rotor');
 	this.$lyric_p = this.$fm.find('.lyric_p');
+	this.$sm_box = $('.sm_box')
 	this.isLyric = false;
 	this.isplay = false;
 	this.songLyricId = '';
@@ -125,7 +126,8 @@ Getmusic.prototype.panelreset = function(song) {
 }
 Getmusic.prototype.styleChance = function() {
 	var _this = this;
-	this.$change_list.on('click','li',function() {
+	this.$change_list.on('click','li',function(e) {
+		_this.$change_list.children().removeClass('li_selected');
 		$(this).addClass('li_selected');
 		_this.channelId = $(this).attr('channel-id');
 		_this.Audio.pause();
@@ -141,11 +143,11 @@ Getmusic.prototype.play = function() {
 	this.$play.on('click', function() {
 		if(_this.Audio.paused) {
 			_this.Audio.play();
-			_this.$play.removeClass('fa-play').addClass('fa-pause')
+//			_this.$play.removeClass('fa-play').addClass('fa-pause')
 			_this.point()
 		}else{
 			_this.Audio.pause();
-			_this.$play.removeClass('fa-pause').addClass('fa-play')
+//			_this.$play.removeClass('fa-pause').addClass('fa-play')
 			_this.point()
 		}
 	})
@@ -211,9 +213,15 @@ Getmusic.prototype.rotor = function() {
 	var _this = this;
 	_this.$audio.on('play', function() {
 		_this.$rotor[0].style.animationPlayState = 'running';
+		_this.$sm_box[0].style.animationPlayState = 'running';
+		_this.$point.removeClass('point_pause');
+		_this.$play.removeClass('fa-play').addClass('fa-pause');
 	})
 	_this.$audio.on('pause', function() {
 		_this.$rotor[0].style.animationPlayState = 'paused';
+		_this.$sm_box[0].style.animationPlayState = 'paused';
+		_this.$point.addClass('point_pause');
+		_this.$play.removeClass('fa-pause').addClass('fa-play');
 	})
 }
 Getmusic.prototype.end = function() {

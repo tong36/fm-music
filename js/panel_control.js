@@ -9,6 +9,7 @@ Panel_control.prototype.init = function() {
 	this.$func = this.$fm.find($('#func'));
 	this.$change_list = this.$fm.find($('.change_list'));
 	this.is_list = false;
+	this.li_on = false;
 }
 Panel_control.prototype.bind = function() {
 	this.close();
@@ -24,6 +25,10 @@ Panel_control.prototype.close = function() {
 		_this.$fm_icon.addClass('dn').removeClass('db');
 	})
 	this.$func.on('click',function() {
+		if(!_this.li_on) {
+			_this.$change_list.children().first().addClass('li_selected');
+			_this.li_on = !_this.li_on;
+		}
 		if(!_this.is_list) {
 			_this.$change_list.removeClass('dn');
 			_this.$func.attr('color','red');

@@ -154,7 +154,7 @@
                     top:11px;
                     width:106px;
                     height:2px;
-                    background-color: #fff;
+                    background-color:rgba(102, 102, 102, 0.6);
                     cursor:pointer;
                 }
                 .vol_f{
@@ -162,7 +162,7 @@
                     top:9px;
                     width:100px;
                     height:2px;
-                    background-color: #000;
+                    background-color: rgba(255, 255, 255, 0.7);
                     cursor:pointer;
                 }
                 .vol_point{
@@ -172,7 +172,7 @@
                     width:6px;
                     height:6px;
                     border-radius:3px;
-                    background:red;
+                    background-color: rgba(255, 255, 255, 0.7);
                     cursor:pointer;
                 }
             }
@@ -202,21 +202,33 @@
             height:2px;
             margin-left:10px;
             margin-top: 9px;
+            cursor:pointer;
             .rate_line_begin{
-                position:absolute;
+                position:relative;
                 top:0;
                 left:0;
                 width:170px;
                 height:2px;
-                background:#545759;
+                background-color: rgba(102, 102, 102, 0.6);
             } 
             .rate_line_end{
-                position:absolute;
-                top:0;
+                position:relative;
+                top:-2px;
                 left:0;
-                width:140px;
+                width:0;
                 height:2px;
                 background:#db4437;
+            }
+            .rate_line_point{
+                position:relative;
+                top:-6px;
+                left:0;
+                width:6px;
+                height:6px;
+                border-radius:3px;
+                background-color:#fff;
+                box-shadow:0 0 5px #fff;
+                cursor: pointer;
             }
         }
     }
@@ -255,11 +267,13 @@
     width:30px;
     height:30px;
     border-radius:50%;
-    background-color:tomato;
+    background-image: url(../img/azusa.png);
+    background-size:cover;
     position: relative;
     left: 99px;
     top: 120px;
     cursor:pointer;
+    animation-duration:2s;
 }
 //滚动条的设置
 .change_list::-webkit-scrollbar {

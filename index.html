@@ -10,7 +10,7 @@
 		<link rel="icon" href="img/favicon.ico" type="image/x-icon" />
 	</head>
 	<body>
-		<div id="fm_icon" class="db"></div>
+		<div id="fm_icon" class="db active sm_box"></div>
 		<div id="fm_music" class="dn">
 			<audio src=""></audio>
 			<!--返回功能|歌曲信息|选择风格-->
@@ -52,12 +52,13 @@
 			</section>
 			<!--播放进度条-->
 			<section id="rate" class="clearfix">
-				<p class="rate_begin fl">0:10</p>
+				<p class="rate_begin fl">0:00</p>
 				<div class="rate_line fl">
 					<div class="rate_line_begin"></div>
 					<div class="rate_line_end"></div>
+					<div class="rate_line_point"></div>
 				</div>
-				<p class="rate_end fr">3:10</p>
+				<p class="rate_end fr"></p>
 			</section>
 			<!--播放功能|上一首|下一首|暂停-->
 			<section id='play_control'>
@@ -68,13 +69,15 @@
 		</div>
 		<script src="js/jquery.min.js"></script>
 		<script src="js/draggabilly.pkgd.min.js"></script>
-		<script src="js/getmusic.js"></script>
+		<script src="js/progress.js"></script> 
 		<script src="js/volume.js"></script>
 		<script src="js/panel_control.js"></script>
+		<script src="js/getmusic.js"></script>
 		<script>
 			new Getmusic($('#fm_music'));
 			new Panel_control($('#fm_music'));
 			new Volume($('#fm_music'));
+			new Progress($('#fm_music'));
 		</script>
 	</body>
 </html>
